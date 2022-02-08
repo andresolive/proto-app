@@ -5,8 +5,9 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const db = {};
 require('dotenv').config();
-const user = 'andres';
-const password = 'aolive95';
+const user = process.env.DB_USERNAME;
+const password = process.env.DB_PASSWORD;
+
 
 const config = {
   host: 'localhost',
@@ -24,7 +25,6 @@ const config = {
 const sequelize = new Sequelize('optyfi_dev', `${user}`, `${password}`, config);
 
 const tempDirName = '/Users/andres/Desktop/OptyFi/proto-app/src/db/models/'
-console.log(__dirname)
 const files = fs.readdirSync(tempDirName);
 // console.log('DIRNAME --> ', __dirname);
 // console.log('FILES', files)
