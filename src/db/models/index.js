@@ -6,6 +6,7 @@ const Sequelize = require('sequelize');
 require('dotenv').config();
 const user = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
+const dbName = process.env.DB_NAME;
 const db = {}
 
 
@@ -22,7 +23,7 @@ const config = {
   operatorsAliases: false
 }
 
-const sequelize = new Sequelize('optyfi_dev', `${user}`, `${password}`, config);
+const sequelize = new Sequelize(`${dbName}`, `${user}`, `${password}`, config);
 
 
 const tempDirName = '/Users/andres/Desktop/OptyFi/proto-app/src/db/models/'
