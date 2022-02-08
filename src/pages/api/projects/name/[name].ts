@@ -8,15 +8,25 @@ const db = require('../../../../db/models/index')
 
 const handler = nc()
   .get(async (req: NextApiRequest, res: NextApiResponse) => {
-    console.log(req.query.name)
-    const project = await db.Project.findOne({
-      where: {
-        description: {
-          [Op.like]: `%${req.query.name}%`
+    try {
+      const project = await db.Project.findOne({
+        where: {
+          description: {
+            [Op.iLike]: `%${req.query.name}%`
+          }
         }
+      })
+      if (project) {
+        res.send(project)
       }
-    })
-    res.send(project)
+      else {
+        res.send('No project matches the description.')
+      }
+    }
+    catch (e) {
+      console.error('Error getting projects by name! ', e)
+      res.statusCode = 500;
+    }
   })
 
 export default handler;
