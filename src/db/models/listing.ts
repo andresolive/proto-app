@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize: any, DataTypes: any) => {
   const Listing = sequelize.define('Listing', {
     
     id: {
@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   })
 
-  Listing.associate = (models) => {
+  Listing.associate = (models: any) => {
     Listing.belongsTo(models.Asset);
   }
 

@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize: any, DataTypes: any) => {
   const Transfer = sequelize.define('Transfer', {
     
     tx: {
@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   })
 
-  Transfer.associate = (models) => {
+  Transfer.associate = (models: any) => {
     Transfer.belongsTo(models.Asset);
   }
 

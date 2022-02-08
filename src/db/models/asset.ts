@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize: any, DataTypes: any) => {
   const Asset = sequelize.define('Asset', {
 
     id: {
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   })
 
-  Asset.associate = (models) => {
+  Asset.associate = (models: any) => {
     Asset.belongsTo(models.Project);
     Asset.hasMany(models.Transfer);
     Asset.hasMany(models.Listing);

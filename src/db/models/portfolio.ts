@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize: any, DataTypes: any) => {
   const Portfolio = sequelize.define('Portfolio', {
     
     
@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   })
 
-  Portfolio.associate = (models) => {
+  Portfolio.associate = (models: any) => {
     Portfolio.belongsToMany(models.Asset, {
       through: "Join_Portfolio_Asset"
     })

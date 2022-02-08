@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize: any, DataTypes: any) => {
   const Metric = sequelize.define('Metric', {
     
     at: {
@@ -71,7 +71,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   })
 
-  Metric.associate = (models) => {
+  Metric.associate = (models: any) => {
     Metric.belongsTo(models.Project);
   }
 

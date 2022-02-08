@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize: any, DataTypes: any) => {
   const Trait_value = sequelize.define('Trait_value', {
 
     type: {
@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   })
 
-  Trait_value.associate = (models) => {
+  Trait_value.associate = (models: any) => {
     Trait_value.belongsToMany(models.Asset, {
       through: "Join_Asset_Trait_value"
     });

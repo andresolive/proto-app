@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/api/assets/index.ts", "src/db/models/asset.js", "src/db/models/index.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/api/assets/index.ts", "src/db/models/asset.ts", "src/db/models/index.js"],
   "exclude": ["node_modules"]
 }
